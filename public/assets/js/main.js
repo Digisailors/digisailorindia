@@ -285,3 +285,21 @@
 		$('.preloader').addClass('preloader-deactivate');
 	});
 }(jQuery));
+
+function toggleTheme() {
+	if (localStorage.getItem('evolta_it_startups_rtl_theme') === 'theme-dark') {
+		setTheme('theme-light');
+	} else {
+		setTheme('theme-dark');
+	}
+}
+// Immediately invoked function to set the theme on initial load
+(function () {
+	if (localStorage.getItem('evolta_it_startups_rtl_theme') === 'theme-dark') {
+		setTheme('theme-dark');
+		document.getElementById('slider').checked = false;
+	} else {
+		setTheme('theme-light');
+	  document.getElementById('slider').checked = true;
+	}
+})();
